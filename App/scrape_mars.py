@@ -72,7 +72,7 @@ def scrape():
         values.append(td_elements[1].text)
             
     #Create data frame
-    mars_facts_df = pd.DataFrame({
+    mars_df = pd.DataFrame({
         "Label": labels,
         "Values": values
     })
