@@ -38,7 +38,7 @@ def scrape():
     image_path = soup.find('figure', class_='lede').a['href']
     featured_image_url = "https://www.jpl.nasa.gov/" + image_path
 
-    #weather url and html
+    #Navigate to weather url
     mars_weather_url = "https://twitter.com/marswxreport?lang=en"
     browser.visit(mars_weather_url)
     mars_weather_html = browser.html
@@ -52,8 +52,8 @@ def scrape():
     browser.visit(mars_facts_url)
 
     #get html
-    facts_html = browser.html
-    soup = BeautifulSoup(facts_html, 'html.parser')
+    mars_facts_html = browser.html
+    soup = BeautifulSoup(mars_facts_html, 'html.parser')
 
     #get the entire table
     table_data = soup.find('table', class_="tablepress tablepress-id-mars")
@@ -133,4 +133,4 @@ def scrape():
         "hemisphere_images": hemisphere_image_urls
     }
 
-    return mars_dict
+    return mars
