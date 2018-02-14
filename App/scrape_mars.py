@@ -82,8 +82,7 @@ def scrape():
     table_html = mars_df.to_html(header = False, index = False)
     table_html
 
-    ### Hemisphere Images
-
+    #Hemisphere Images
     hemisphere_image_urls = [
     {"title": "Valles Marineris Hemisphere", "img_url": "https://astropedia.astrogeology.usgs.gov/download/Mars/Viking/valles_marineris_enhanced.tif/full.jpg"},
     {"title": "Cerberus Hemisphere", "img_url": "http://astropedia.astrogeology.usgs.gov/download/Mars/Viking/cerberus_enhanced.tif/full.jpg"},
