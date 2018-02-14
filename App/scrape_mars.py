@@ -38,11 +38,6 @@ def scrape():
     image_path = soup.find('figure', class_='lede').a['href']
     featured_image_url = "https://www.jpl.nasa.gov/" + image_path
 
-
-
-
-    # # Mars Weather
-
     #weather url and html
     mars_weather_url = "https://twitter.com/marswxreport?lang=en"
     browser.visit(mars_weather_url)
@@ -52,13 +47,9 @@ def scrape():
     soup = BeautifulSoup(mars_weather_html, 'html.parser')
     mars_weather = soup.find('p', class_="TweetTextSize TweetTextSize--normal js-tweet-text tweet-text").text
 
-
-
-    # # Mars Facts
-
-    #mars facts url and splinter visit
-    facts_url = "https://space-facts.com/mars/"
-    browser.visit(facts_url)
+    #Navigate to Mars facts url
+    mars_facts_url = "https://space-facts.com/mars/"
+    browser.visit(mars_facts_url)
 
     #get html
     facts_html = browser.html
@@ -80,8 +71,7 @@ def scrape():
         labels.append(td_elements[0].text)
         values.append(td_elements[1].text)
             
-
-    #make a data frame
+    #Create data frame
     mars_facts_df = pd.DataFrame({
         "Label": labels,
         "Values": values
