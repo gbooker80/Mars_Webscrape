@@ -123,7 +123,7 @@ def scrape():
         
     #print(hemisphere_image_urls)
 
-    mars_dict = {
+    mars_web = {
         "id": 1,
         "news_title": news_title,
         "news_p": news_p,
@@ -133,4 +133,4 @@ def scrape():
         "hemisphere_images": hemisphere_image_urls
     }
 
-    return mars
+    return mars_web
